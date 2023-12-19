@@ -20,9 +20,6 @@ Before running the application, make sure you have the following installed:
    ```
 2. Install dependencies:
    ```bash
-	go mod init
-   ```
-   ```bash
 	go mod tidy
    ```
 4. Set up the PostgreSQL database:
