@@ -43,9 +43,11 @@ Replace Spotify application credentials in main.go with your own:
 
 5. Run the application:
    
+    To generate the swagger docs 
    ```bash
 	swag init
    ```
+    To start the server
    ```bash
 	go run main.go
    ```
