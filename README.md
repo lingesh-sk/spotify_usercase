@@ -27,7 +27,7 @@ Before running the application, make sure you have the following installed:
       Create a new PostgreSQL database named spotifyusercasedb.
       Update the database connection details in the main.go file.
    ```bash
-   db, err := gorm.Open("postgres", "postgres://your_username:your_password@localhost:5432/spotifyusercasedb? 
+   db, err := gorm.Open("postgres", "postgres://your_username:your_password@localhost:5432/yourdatabase? 
    sslmode=disable")
    ```
 
