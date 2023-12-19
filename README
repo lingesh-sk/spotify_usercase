@@ -1,0 +1,138 @@
+<!-- # Spotify Track Details API
+
+This repository contains a simple Go application that serves as an API for retrieving and storing details about music tracks using the International Standard Recording Code (ISRC). The application leverages the Gin framework for building the API and GORM for database interactions, with PostgreSQL as the chosen database. Additionally, it integrates with the Spotify API for obtaining detailed information about tracks.
+
+
+## Features
+
+Get Track Details: Retrieve detailed information about a track by providing its ISRC code.
+
+
+## GET /track/:isrc
+
+If the track details are already stored in the database, the API responds with the cached information. Otherwise, it queries the Spotify API to fetch the details, stores them in the database, and returns the information.
+
+
+## POST /track
+
+ Format for posting track details
+{
+  "isrc": "example_isrc",
+  "title": "Example Track",
+  "artist_name": "Example Artist",
+  "spotify_image": "https://example.com/image.jpg"
+}
+
+
+## Prerequisites
+
+Before running the application, ensure you have the following set up:
+
+PostgreSQL database with the name spotifydb (you can modify the connection string in the code).
+Spotify application credentials (client ID and client secret) to authenticate with the Spotify API.
+
+
+## Installation and Usage
+
+1. Clone the repository:
+### git clone https://github.com/yourusername/spotify-track-api.git
+
+2.Install dependencies:
+### go mod tidy
+
+3.Set up the database:
+
+### Modify the connection string in main.go to match your PostgreSQL setup
+
+4.Replace Spotify application credentials in main.go with your own:
+
+	ClientID:     "your_client_id",
+	ClientSecret: "your_client_secret",
+
+5. Run the application:
+
+### swag init
+To generate docs files.
+
+### go run main.go
+
+
+### The API will be accessible at http://localhost:8080.
+
+### You can access the Swagger UI by visiting http://localhost:8080/swagger/index.html in your web browser.
+
+API should have Swagger documentation, and you can use the Swagger UI to explore and test your API endpoints.  -->
+
+
+# Spotify User Case API
+
+This is a simple API that allows users to interact with Spotify track information. Users can perform actions such as retrieving track details by ISRC code, searching tracks by artist name, creating new tracks, and updating existing track information.
+
+## Getting Started
+
+### Prerequisites
+
+Before running the application, make sure you have the following installed:
+
+- Go (Golang)
+- PostgreSQL
+
+### Installation
+
+1. Clone the repository:
+
+   
+   git clone https://github.com/lingesh-sk/spotify_usercase.git
+   cd spotify_usercase
+   Install dependencies:
+
+
+2. Install dependencies:
+      go mod download
+
+3. Set up the PostgreSQL database:
+
+      Create a new PostgreSQL database named spotifyusercasedb.
+      Update the database connection details in the main.go file.
+
+4. Run the application:
+      go run main.go
+
+
+### API Endpoints
+    GET /track/:isrc
+
+      Retrieve track details by ISRC code.
+
+    GET /track/artist/:artistName
+
+      Search tracks by artist name.
+
+    POST /track
+
+      Create a new track.
+
+    PUT /track/:isrc
+
+      Update an existing track by ISRC code.
+
+### Swagger Documentation
+
+Swagger documentation is available at http://localhost:8080/swagger/index.html.
+
+
+### Configuration
+Database and Spotify API credentials can be configured in the main.go file.
+
+
+var SpotifyCredentials = struct {
+	ClientID     string
+	ClientSecret string
+}{
+	ClientID:     "your_spotify_client_id",
+	ClientSecret: "your_spotify_client_secret",
+}
+
+// ...
+
+db, err := gorm.Open("postgres", "postgres://your_username:your_password@localhost:5432/spotifyusercasedb?sslmode=disable")
