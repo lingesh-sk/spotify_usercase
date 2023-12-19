@@ -103,7 +103,7 @@ Before running the application, make sure you have the following installed:
     GET /track/:isrc
 
       Retrieve track details by ISRC code.
-       ![Screenshot](asset/GetByISRC_SS.jpg)
+       ![DB_details_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/ff8c2c4d-7bd7-47dc-b136-5c378ed5e9f2)
 
     GET /track/artist/:artistName
 
