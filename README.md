@@ -75,21 +75,25 @@ Replace Spotify application credentials in main.go with your own:
 
 ## Output Screenshots
 
-### Retrieve track details by ISRC code 
+ **Swagger Homepage**
+ 
+ ![swagger_homepage_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/180799cb-9119-4c98-8950-247c95c9c599)
+
+ **Retrieve track details by ISRC code** 
 
  ![GetByISRC_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/8ffbaa09-b64d-4fe2-9ad7-2453cab804c4)
 
-### Search tracks by artist name.
+ **Search tracks by artist name**
  ![GetByArtistName_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/b7417b45-0474-4d83-b42d-6ab7e1780e66)
 
-### Create a new track.
+ **Create a new track**
 
 ![PostbyISRC_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/03332e49-cb7a-40be-a489-919796620650)
 
-### Update an existing track by ISRC code.
+ **Update an existing track by ISRC code**
 
 ![PutbyISRC_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/2e628036-d165-4f73-bf71-8d278c01796c)
 
-### Data stored in the PostgreSQL database
+ **Data stored in the PostgreSQL database**
 
 ![DB_details_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/ff8c2c4d-7bd7-47dc-b136-5c378ed5e9f2)
