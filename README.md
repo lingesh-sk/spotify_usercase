@@ -84,3 +84,18 @@ var SpotifyCredentials = struct {
 // ...
 
 db, err := gorm.Open("postgres", "postgres://your_username:your_password@localhost:5432/spotifyusercasedb?sslmode=disable")
+
+Retrieve track details by ISRC code 
+
+ ![GetByISRC_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/8ffbaa09-b64d-4fe2-9ad7-2453cab804c4)
+
+Search tracks by artist name.
+ ![GetByArtistName_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/b7417b45-0474-4d83-b42d-6ab7e1780e66)
+
+Create a new track.
+
+![PostbyISRC_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/03332e49-cb7a-40be-a489-919796620650)
+
+Update an existing track by ISRC code.
+
+![PutbyISRC_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/2e628036-d165-4f73-bf71-8d278c01796c)
