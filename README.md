@@ -75,6 +75,10 @@ Replace Spotify application credentials in main.go with your own:
 
 ## Output Screenshots
 
+### Swagger homepage
+
+![swagger_homepage_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/892357ef-c288-421b-bbd8-13d30cc6a0ae)
+
 ### Retrieve track details by ISRC code 
 
  ![GetByISRC_SS](https://github.com/lingesh-sk/spotify_usercase/assets/119925929/8ffbaa09-b64d-4fe2-9ad7-2453cab804c4)
