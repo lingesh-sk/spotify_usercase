@@ -1,0 +1,141 @@
+basePath: /
+definitions:
+  model.TrackDetails:
+    properties:
+      artist_name:
+        type: string
+      isrc:
+        type: string
+      spotify_image:
+        type: string
+      title:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: A Golang application which interfaces to the Spotify API using GORM
+    and the Gin web framework..
+  title: Spotify API usercase
+  version: "1.0"
+paths:
+  /track:
+    post:
+      consumes:
+      - application/json
+      description: Create a new track record in the database
+      operationId: create-track
+      parameters:
+      - description: Track details to create
+        in: body
+        name: trackDetails
+        required: true
+        schema:
+          $ref: '#/definitions/model.TrackDetails'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Existing track details
+          schema:
+            $ref: '#/definitions/model.TrackDetails'
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.TrackDetails'
+        "400":
+          description: Invalid request body
+          schema:
+            additionalProperties: true
+            type: object
+        "409":
+          description: Track with ISRC code already exists
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Create a new track
+  /track/{isrc}:
+    get:
+      description: Get track details from the database or Spotify by ISRC code
+      operationId: get-track-by-isrc
+      parameters:
+      - description: ISRC code of the track
+        in: path
+        name: isrc
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TrackDetails'
+        "404":
+          description: Track not found
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get track details by ISRC
+    put:
+      consumes:
+      - application/json
+      description: Update an existing track record in the database by ISRC
+      parameters:
+      - description: ISRC code of the track to be updated
+        in: path
+        name: isrc
+        required: true
+        type: string
+      - description: Updated track details
+        in: body
+        name: trackDetails
+        required: true
+        schema:
+          $ref: '#/definitions/model.TrackDetails'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TrackDetails'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Update a track by ISRC
+  /track/artist/{artistName}:
+    get:
+      description: Search tracks from the database or Spotify by artist name
+      operationId: search-track-by-artist
+      parameters:
+      - description: Name of the artist
+        in: path
+        name: artistName
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.TrackDetails'
+            type: array
+        "404":
+          description: No tracks found for the artist
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Search tracks by artist name
+swagger: "2.0"
