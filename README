@@ -103,7 +103,7 @@ Before running the application, make sure you have the following installed:
     GET /track/:isrc
 
       Retrieve track details by ISRC code.
-       ![Screenshot](GetByISRC_SS.jpg)
+       ![Screenshot](asset/GetByISRC_SS.jpg)
 
     GET /track/artist/:artistName
 
