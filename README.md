@@ -33,6 +33,7 @@ Before running the application, make sure you have the following installed:
 
 ### Configuration
 
+Go to the Spotify Developer Dashboard (https://developer.spotify.com/dashboard/applications).
 Replace Spotify application credentials in main.go with your own:
 ```bash
 {
