@@ -36,7 +36,7 @@ func main() {
 	docs.SwaggerInfo.BasePath = "/"
 
 	//DB connection setup
-	db, err := gorm.Open("postgres", "postgres://postgres:12345678@localhost:5432/spotifyusercasedb?sslmode=disable")
+	db, err := gorm.Open("postgres", "postgres://your_username:your_password@localhost:5432/your_databasename?sslmode=disable")
 	if err != nil {
 		log.Fatal(err)
 	}
