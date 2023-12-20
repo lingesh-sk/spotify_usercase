@@ -22,8 +22,8 @@ var SpotifyCredentials = struct {
 	ClientID     string
 	ClientSecret string
 }{
-	ClientID:     "eb5c76245429470098e63a4abf7ccc4e",
-	ClientSecret: "2ce225e50c824469af729e464d63c0f3",
+	ClientID:     "Your_client_ID",
+	ClientSecret: "Your_client_Secret",
 }
 
 // @title Spotify API usercase
